@@ -27,6 +27,8 @@ These flags may only be used in the `init` message:
 | 4/5   | `option_upfront_shutdown_script` | Commits to a shutdown scriptpubkey when opening channel                   | [BOLT #2][bolt02-open]       |
 | 6/7   | `gossip_queries`                 | More sophisticated gossip control                                         | [BOLT #7][bolt07-query]      |
 | 10/11 | `gossip_queries_ex`              | Gossip queries can include additional information                         | [BOLT #7][bolt07-query]      |
+| ??/?? | ``opt_shutdown_anysegwit`        | Future segwit versions allowed in `shutdown`                              | [BOLT #2][bolt02-shutdown]   |
+
 
 ## Assigned `globalfeatures` flags
 
@@ -54,6 +56,7 @@ This work is licensed under a [Creative Commons Attribution 4.0 International Li
 
 [bolt02-retransmit]: 02-peer-protocol.md#message-retransmission
 [bolt02-open]: 02-peer-protocol.md#the-open_channel-message
+[bolt02-shutdown]: 02-peer-protocol.md#closing-initiation-shutdown
 [bolt04]: 04-onion-routing.md
 [bolt07-sync]: 07-routing-gossip.md#initial-sync
 [bolt07-query]: 07-routing-gossip.md#query-messages
