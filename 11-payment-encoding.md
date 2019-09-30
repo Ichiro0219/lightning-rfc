@@ -35,10 +35,12 @@ encoding.
 
 A writer:
    - MUST encode the payment request in Bech32 (see BIP-0173)
+   - SHOULD use upper case for QR codes (see BIP-0173)
    - MAY exceed the 90-character limit specified in BIP-0173.
 
 A reader:
   - MUST parse the address as Bech32, as specified in BIP-0173 (also without the character limit).
+	- Note: this includes handling uppercase as specified by BIP-0173
   - if the checksum is incorrect:
     - MUST fail the payment.
 
@@ -535,23 +537,23 @@ Breakdown:
   * `399a8b167029fda8564fd2e99912236b0b8017e7d17e416ae17307812c92cf42` hex of SHA256 of the preimage
 
 > ### Please send $30 for coffee beans to the same peer, which supports features 1 and 9
-> lnbc25m1pvjluezpp5qqqsyqcyq5rqwzqfqqqsyqcyq5rqwzqfqqqsyqcyq5rqwzqfqypqdq5vdhkven9v5sxyetpdees9qzsze992adudgku8p05pstl6zh7av6rx2f297pv89gu5q93a0hf3g7lynl3xq56t23dpvah6u7y9qey9lccrdml3gaqwc6nxsl5ktzm464sq73t7cl
+> LNBC25M1PVJLUEZPP5QQQSYQCYQ5RQWZQFQQQSYQCYQ5RQWZQFQQQSYQCYQ5RQWZQFQYPQDQ5VDHKVEN9V5SXYETPDEES9QZSZE992ADUDGKU8P05PSTL6ZH7AV6RX2F297PV89GU5Q93A0HF3G7LYNL3XQ56T23DPVAH6U7Y9QEY9LCCRDML3GAQWC6NXSL5KTZM464SQ73T7CL
 
 Breakdown:
 
-* `lnbc`: prefix, Lightning on Bitcoin mainnet
-* `25m`: amount (25 milli-bitcoin)
+* `LNBC`: prefix, Lightning on Bitcoin mainnet
+* `25M`: amount (25 milli-bitcoin)
 * `1`: Bech32 separator
-* `pvjluez`: timestamp (1496314658)
-* `p`: payment hash...
-* `d`: short description
-  * `q5`: `data_length` (`q` = 0, `5` = 20; 0 * 32 + 20 == 20)
-  * `vdhkven9v5sxyetpdees`: 'coffee beans'
+* `PVJLUEZ`: timestamp (1496314658)
+* `P`: payment hash...
+* `D`: short description
+  * `Q5`: `data_length` (`q` = 0, `5` = 20; 0 * 32 + 20 == 20)
+  * `VDHKVEN9V5SXYETPDEES`: 'coffee beans'
 * `9`: features
-  * `qz`: `data_length` (`q` = 0, `z` = 2; 0 * 32 + 2 == 2)
-  * `sz`: b1000000010
-* `e992adudgku8p05pstl6zh7av6rx2f297pv89gu5q93a0hf3g7lynl3xq56t23dpvah6u7y9qey9lccrdml3gaqwc6nxsl5ktzm464sq`: signature
-* `73t7cl`: Bech32 checksum
+  * `QZ`: `data_length` (`q` = 0, `z` = 2; 0 * 32 + 2 == 2)
+  * `SZ`: b1000000010
+* `E992ADUDGKU8P05PSTL6ZH7AV6RX2F297PV89GU5Q93A0HF3G7LYNL3XQ56T23DPVAH6U7Y9QEY9LCCRDML3GAQWC6NXSL5KTZM464SQ`: signature
+* `73T7CL`: Bech32 checksum
 
 > # Same, but using invalid unknown feature 100
 > lnbc25m1pvjluezpp5qqqsyqcyq5rqwzqfqqqsyqcyq5rqwzqfqqqsyqcyq5rqwzqfqypqdq5vdhkven9v5sxyetpdees9q4pqqqqqqqqqqqqqqqqqqszk3ed62snp73037h4py4gry05eltlp0uezm2w9ajnerhmxzhzhsu40g9mgyx5v3ad4aqwkmvyftzk4k9zenz90mhjcy9hcevc7r3lx2sphzfxz7
