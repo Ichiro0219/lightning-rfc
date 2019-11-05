@@ -861,9 +861,9 @@ In the case where the `channel_announcement` is nonetheless missed,
 `query_short_channel_ids` can be used to retrieve it.
 
 Nodes can use `timestamp_filter` to reduce their gossip load when they
-have many peers (eg. setting `first_timestamp` to 0xFFFFFFFF after the
-first few peers, in the assumption that propagation is adaquate).
-This assumption of adaquate propagation does not apply for gossip messages
+have many peers (eg. setting `first_timestamp` to `0xFFFFFFFF` after the
+first few peers, in the assumption that propagation is adequate).
+This assumption of adequate propagation does not apply for gossip messages
 generated directly by the node itself, so they should ignore filters.
 
 ## Initial Sync
